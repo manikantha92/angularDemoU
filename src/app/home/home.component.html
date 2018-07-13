@@ -11,7 +11,7 @@
   </div>
 </div>
 
-<div class="container color-light">
+<div class="container color-light" [@goals]="goals.length">
   <div class="col">
     <p class="sm">
       What do you want to do in your life ?
@@ -23,7 +23,7 @@
     </form>
   </div>
   <div class="col">
-    <p class="life-container" *ngFor = "let a of goals">
+    <p class="life-container" *ngFor = "let a of goals; let i = index" (click)="removeItem(i)">
     {{a}}
     </p>
   </div>
